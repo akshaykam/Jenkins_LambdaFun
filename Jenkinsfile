@@ -10,6 +10,7 @@ pipeline {
 
                     // Optionally, process the output (if needed)
                     if (fileExists('output.json')) {
+                        import groovy.json.JsonSlurper
                         def jsonSlurper = new JsonSlurper()
                         def jsonData = jsonSlurper.parse(file('output.json'))
                         // Access data from jsonData object
